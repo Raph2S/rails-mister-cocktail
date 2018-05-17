@@ -1,0 +1,17 @@
+<h1><%= @cocktail.name %></h1>
+
+<%= link_to "Add dosage details", new_cocktail_dose_path(@cocktail), class: "btn btn-warning btn-sm" %>
+
+<div class="row">
+  <div class="col-xs-12 col-sm-6">
+    <ul class="list-unstyled">
+      <% @cocktail.doses.each do |i| %>
+        <li><%= i.description %> - <%= i.ingredient.name %></li>
+      <% end %>
+   </ul>
+  </div>
+
+</div>
+
+
+<%= link_to "Back to index", cocktails_path, class: "btn btn-warning btn-sm" %>
